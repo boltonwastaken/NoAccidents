@@ -1,7 +1,6 @@
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
-        Citizen.Wait(0)
-
+        local sleep = 300
         local playerPed = PlayerPedId()
 
         if IsPedArmed(playerPed, 6) then
@@ -14,6 +13,8 @@ Citizen.CreateThread(function()
                 DisableControlAction(1, 141, true)
                 DisableControlAction(1, 142, true)
             end
+            sleep = 0
         end
+        Wait(sleep)
     end
 end)
